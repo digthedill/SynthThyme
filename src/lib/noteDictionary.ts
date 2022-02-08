@@ -18,6 +18,7 @@ const noteDictionary: DictionaryType = {
   k: "c5",
   o: "c#5",
   l: "d5",
+  p: "d#5",
   ";": "e5",
 };
 
