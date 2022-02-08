@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Synth } from "tone";
 import { noteDictionary } from "./lib/noteDictionary";
 import Key from "./components/Key";
+import ComponentContainer from "./components/ComponentContainer";
 
 /**TODO:
  * 1- refactor synth start to ref?
@@ -41,8 +42,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <SynthContainer>
+    <TheSynthContainer>
+      <ComponentContainer>
         {Object.keys(noteDictionary).map((key) => {
           return (
             <Key
@@ -54,16 +55,15 @@ const App: React.FC = () => {
             />
           );
         })}
-      </SynthContainer>
-    </div>
+      </ComponentContainer>
+    </TheSynthContainer>
   );
 };
 
-const SynthContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+const TheSynthContainer = styled.div`
+  margin-top: 1rem;
+  width: 80%;
+  margin: auto;
 `;
 
 export default App;
