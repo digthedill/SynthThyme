@@ -10,6 +10,8 @@ import Key from "./components/Key";
 import MediumKnob from "./components/MediumKnob";
 import KeyboardContainer from "./components/KeyboardContainer";
 import SettingsContainer from "./components/SettingsContainer";
+import LargeKnob from "./components/LargeKnob";
+import SmallKnob from "./components/SmallKnob";
 
 /**TODO:
  * 1- refactor synth start to ref?
@@ -48,32 +50,46 @@ const App: React.FC = () => {
   };
 
   return (
-    <TheSynthContainer>
-      {/* 1:2 */}
-      <Controls>
-        <SettingsContainer>
-          <MediumKnob />
-          <MediumKnob />
-          <MediumKnob />
-        </SettingsContainer>
-        <SettingsContainer></SettingsContainer>
-      </Controls>
+    <>
+      <h1 style={{ textAlign: "center" }}>Da Synth </h1>
+      <TheSynthContainer>
+        <Controls>
+          {/* 1:2 */}
+          <div>
+            <Controls>
+              <SettingsContainer>
+                <LargeKnob />
+              </SettingsContainer>
+              <SettingsContainer>
+                <SmallKnob />
+              </SettingsContainer>
+            </Controls>
+            <SettingsContainer>
+              <MediumKnob />
+              <MediumKnob />
+              <MediumKnob />
+            </SettingsContainer>
+          </div>
+          {/* 2:2 */}
+          <SettingsContainer>this is the sliders?</SettingsContainer>
+        </Controls>
 
-      {/* 1:1 */}
-      <KeyboardContainer>
-        {Object.keys(noteDictionary).map((key) => {
-          return (
-            <Key
-              key={key}
-              note={noteDictionary[key]}
-              keyboardInput={key}
-              triggerSynth={triggerSynth}
-              playNote={playNote}
-            />
-          );
-        })}
-      </KeyboardContainer>
-    </TheSynthContainer>
+        {/* 1:1 */}
+        <KeyboardContainer>
+          {Object.keys(noteDictionary).map((key) => {
+            return (
+              <Key
+                key={key}
+                note={noteDictionary[key]}
+                keyboardInput={key}
+                triggerSynth={triggerSynth}
+                playNote={playNote}
+              />
+            );
+          })}
+        </KeyboardContainer>
+      </TheSynthContainer>
+    </>
   );
 };
 
@@ -86,14 +102,11 @@ const Controls = styled.div`
 `;
 
 const TheSynthContainer = styled.div`
-  margin-top: 1rem;
   width: min-content;
   margin: auto;
   background: ${({ theme }) => theme.colors.backgroundColor};
   padding: 2rem;
-  & > * {
-    margin: 1rem;
-  }
+  border-radius: 78px;
 `;
 
 export default App;

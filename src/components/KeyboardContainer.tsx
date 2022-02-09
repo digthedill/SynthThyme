@@ -8,8 +8,12 @@ const Container = styled.div`
   background: ${({ theme }) => theme.colors.componentBackground};
   box-shadow: ${({ theme }) => theme.colors.componentShadow};
   border-radius: ${({ theme }) => theme.colors.componentRadius};
+
   padding: 2rem;
+  margin: 1rem;
+
   width: min-content;
+
   display: flex;
   flex-direction: row;
   justify-content: center;

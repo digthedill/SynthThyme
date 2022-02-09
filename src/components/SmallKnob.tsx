@@ -6,8 +6,8 @@ const SmallKnob: React.FC = () => {
     <OuterCircle>
       <DialWrapper>
         <svg
-          width="93"
-          height="93"
+          width="75"
+          height="75"
           viewBox="0 0 93 93"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

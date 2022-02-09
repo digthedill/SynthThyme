@@ -9,6 +9,7 @@ const Container = styled.div`
   box-shadow: ${({ theme }) => theme.colors.componentShadow};
   border-radius: ${({ theme }) => theme.colors.componentRadius};
   padding: 2rem;
+  margin: 1rem;
 
   display: flex;
   flex-direction: row;

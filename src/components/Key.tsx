@@ -30,7 +30,7 @@ const Key = ({
   };
 
   return (
-    <div>
+    <KeyContainer>
       {pianoKeyColor(note) === "black" ? (
         <BlackKey onClick={handleClick} playNote={playNote} note={note}>
           {note}
@@ -40,7 +40,7 @@ const Key = ({
           {note}
         </WhiteKey>
       )}
-    </div>
+    </KeyContainer>
   );
 };
 
@@ -48,6 +48,10 @@ interface Props {
   playNote: { isPressed: boolean; note: string };
   note: string;
 }
+
+const KeyContainer = styled.div`
+  margin: 0.6rem;
+`;
 
 const BlackKey = styled.button<Props>`
   padding: 0.8rem;
