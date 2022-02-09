@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const ComponentContainer: React.FC = ({ children }) => {
+const KeyboardContainer: React.FC = ({ children }) => {
   return <Container>{children}</Container>;
 };
 
@@ -9,10 +9,10 @@ const Container = styled.div`
   box-shadow: ${({ theme }) => theme.colors.componentShadow};
   border-radius: ${({ theme }) => theme.colors.componentRadius};
   padding: 2rem;
-  /* width: 100%; */
+  width: min-content;
   display: flex;
   flex-direction: row;
   justify-content: center;
 `;
 
-export default ComponentContainer;
+export default KeyboardContainer;

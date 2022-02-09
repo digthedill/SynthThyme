@@ -1,9 +1,15 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import styled from "styled-components";
 import { Synth } from "tone";
+
+//utils and libraries
 import { noteDictionary } from "./lib/noteDictionary";
+
+//components
 import Key from "./components/Key";
-import ComponentContainer from "./components/ComponentContainer";
+import MediumKnob from "./components/MediumKnob";
+import KeyboardContainer from "./components/KeyboardContainer";
+import SettingsContainer from "./components/SettingsContainer";
 
 /**TODO:
  * 1- refactor synth start to ref?
@@ -43,7 +49,18 @@ const App: React.FC = () => {
 
   return (
     <TheSynthContainer>
-      <ComponentContainer>
+      {/* 1:2 */}
+      <Controls>
+        <SettingsContainer>
+          <MediumKnob />
+          <MediumKnob />
+          <MediumKnob />
+        </SettingsContainer>
+        <SettingsContainer></SettingsContainer>
+      </Controls>
+
+      {/* 1:1 */}
+      <KeyboardContainer>
         {Object.keys(noteDictionary).map((key) => {
           return (
             <Key
@@ -55,15 +72,28 @@ const App: React.FC = () => {
             />
           );
         })}
-      </ComponentContainer>
+      </KeyboardContainer>
     </TheSynthContainer>
   );
 };
 
+const Controls = styled.div`
+  display: flex;
+
+  & > * {
+    width: 50%;
+  }
+`;
+
 const TheSynthContainer = styled.div`
   margin-top: 1rem;
-  width: 80%;
+  width: min-content;
   margin: auto;
+  background: ${({ theme }) => theme.colors.backgroundColor};
+  padding: 2rem;
+  & > * {
+    margin: 1rem;
+  }
 `;
 
 export default App;

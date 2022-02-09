@@ -12,6 +12,12 @@ const theme = {
     componentShadow:
       "-2px -4px 12px rgba(0, 0, 0, 0.45), 2px 4px 12px rgba(254, 254, 254, 0.15)",
     componentRadius: "14px",
+    red: "#EC0100",
+    teal: "#289E9E",
+    green: "#0F940B",
+
+    text: "rgba(255, 255, 255, 0.41)",
+    backgroundColor: "#383838",
   },
   whiteKey: {
     height: "282px",
