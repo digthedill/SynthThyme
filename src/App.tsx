@@ -12,6 +12,7 @@ import KeyboardContainer from "./components/KeyboardContainer";
 import SettingsContainer from "./components/SettingsContainer";
 import LargeKnob from "./components/LargeKnob";
 import SmallKnob from "./components/SmallKnob";
+import Slider from "./components/Slider";
 
 /**TODO:
  * 1- refactor synth start to ref?
@@ -71,7 +72,12 @@ const App: React.FC = () => {
             </SettingsContainer>
           </div>
           {/* 2:2 */}
-          <SettingsContainer>this is the sliders?</SettingsContainer>
+          <SettingsContainer>
+            <Slider />
+            <Slider />
+            <Slider />
+            <Slider />
+          </SettingsContainer>
         </Controls>
 
         {/* 1:1 */}
